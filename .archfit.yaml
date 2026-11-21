@@ -1,0 +1,34 @@
+# The Archfit policy, written by archfit init from the code as it is today.
+# Review the modules, public, depends_on and exceptions, then commit it.
+version: 1
+owners:
+  - coupling-dev
+modules:
+  api:
+    paths:
+      - internal/api/**
+    public:
+      - internal/api
+    depends_on:
+      - store
+  cmd_coldrun:
+    paths:
+      - cmd/coldrun/**
+    public:
+      - cmd/coldrun
+    depends_on:
+      - api
+  store:
+    paths:
+      - internal/store/**
+    public:
+      - internal/store
+    depends_on:
+      - util
+  util:
+    paths:
+      - internal/util/**
+    public:
+      - internal/util
+tests:
+  - "**/*_test.go"

@@ -1,0 +1,35 @@
+{
+  "hooks": {
+    "PostToolUse": [
+      {
+        "matcher": "^apply_patch$|^Bash$",
+        "hooks": [
+          {
+            "type": "command",
+            "command": "archfit hook run post-tool-use --harness codex"
+          }
+        ]
+      }
+    ],
+    "SessionStart": [
+      {
+        "hooks": [
+          {
+            "type": "command",
+            "command": "archfit hook run session-start --harness codex"
+          }
+        ]
+      }
+    ],
+    "Stop": [
+      {
+        "hooks": [
+          {
+            "type": "command",
+            "command": "archfit hook run stop --harness codex"
+          }
+        ]
+      }
+    ]
+  }
+}
