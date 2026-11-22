@@ -1,0 +1,20 @@
+name: archfit
+on:
+  pull_request:
+  push:
+    branches: [main]
+  merge_group:
+    types: [checks_requested]
+
+permissions:
+  contents: read
+  id-token: write
+
+jobs:
+  archfit:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: coupling-dev/archfit-action@53e0c49d80627efa4262d7ee78c56dd6054a6e43 # v0.9.0
+        with:
+          endpoint: https://app.coupling.dev
+          audience: https://app.coupling.dev
