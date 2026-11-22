@@ -2,7 +2,7 @@
 # Review the modules, public, depends_on and exceptions, then commit it.
 version: 1
 owners:
-  - coupling-dev
+  - alexei-led
 modules:
   api:
     paths:
