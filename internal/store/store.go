@@ -31,3 +31,8 @@ func (s *Store) Lookup(key string) (string, bool) {
 	v, ok := s.data[key]
 	return v, ok
 }
+
+// Delete removes key from the store.
+func (s *Store) Delete(key string) {
+	delete(s.data, key)
+}
