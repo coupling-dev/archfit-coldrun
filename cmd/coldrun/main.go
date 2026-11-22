@@ -5,6 +5,7 @@ import (
 	"os"
 
 	"github.com/coupling-dev/archfit-coldrun/internal/api"
+	"github.com/coupling-dev/archfit-coldrun/internal/store"
 )
 
 func main() {
@@ -14,5 +15,5 @@ func main() {
 		os.Exit(1)
 	}
 	v, _ := srv.Get("hello")
-	fmt.Println(v)
+	fmt.Println(v, store.New() != nil)
 }
